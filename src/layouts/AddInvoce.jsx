@@ -7,12 +7,12 @@ import { useNavigate } from "react-router-dom";
 
 const initialState = {
   id: faker.datatype.uuid(),
-  invoiceNumber: 0,
+  invoiceNumber: Number,
   invoiceDate: "",
   customerName: "",
   productName: "",
-  productPrice: 0,
-  productQuantity: 0,
+  productPrice: Number,
+  productQuantity: Number,
 };
 
 const formInputs = [
@@ -56,7 +56,7 @@ const AddInvoice = () => {
   );
 
   const handleSubmit = (e) => {
-    e.preventDefault();
+    e.preventDefault(); 
     if (
       data.current.invoiceNumber === 0 ||
       data.current.invoiceDate === "" ||

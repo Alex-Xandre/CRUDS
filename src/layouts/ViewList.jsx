@@ -52,6 +52,7 @@ const ViewList = () => {
                 </thead>
                 <tbody>
                   {invoice.map((x, index) => {
+                    const total = x.productQuantity * x.productPrice;
                     return (
                       <tr
                         key={index}
@@ -76,7 +77,7 @@ const ViewList = () => {
                           {x.productPrice}
                         </td>
                         <td className="max-w-xs break-all py-2 px-6 text-left">
-                          {x.productQuantity * x.productPrice}
+                          {total}
                         </td>
                         <td className="py-2 px-6 text-left flex flex-wrap">
                           {" "}

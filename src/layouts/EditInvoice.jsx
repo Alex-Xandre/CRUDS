@@ -10,9 +10,10 @@ const EditInvoice = () => {
   const data = React.useRef(invoice.filter((x) => x.id == params.id));
   const navigate = useNavigate();
 
+ 
   const handleChange = React.useCallback(
     (id, value) => {
-      data.current = { ...data.current[0], [id]: value };
+      data.current[0] = { ...data.current[0], [id]: value };
     },
     [data]
   );
@@ -20,9 +21,10 @@ const EditInvoice = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log(data.current);
-    editInvoice(data.current);
-    alert("Task Updated Succesfully");
-    navigate("/");
+      editInvoice(data.current[0]);
+      alert("Invoice Updated Succesfully");
+      navigate("/");
+    // };
   };
 
   const formInputs = [
